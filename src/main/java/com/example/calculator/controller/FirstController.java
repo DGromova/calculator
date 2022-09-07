@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/calculator")
 
 public class FirstController {
-    private final OperationsInterfaceImpl operationsInterface;
+    private final OperationsService operationsInterface;
 
-    public FirstController(OperationsInterfaceImpl operationsInterface) {
+    public FirstController(OperationsService operationsInterface) {
         this.operationsInterface = operationsInterface;
     }
 
