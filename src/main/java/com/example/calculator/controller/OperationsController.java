@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/calculator")
 
-public class FirstController {
-    private final OperationsService operationsInterface;
+public class OperationsController {
+    private final OperationsService operationsService;
 
-    public FirstController(OperationsService operationsInterface) {
-        this.operationsInterface = operationsInterface;
+    public OperationsController(OperationsService operationsInterface) {
+        this.operationsService = operationsInterface;
     }
 
     @GetMapping()
@@ -20,18 +20,18 @@ public class FirstController {
     }
     @GetMapping("/plus")
     public CharSequence plus(int num1, int num2) {
-        return num1 + "+" + num2 + "=" + operationsInterface.getPlus(num1, num2);
+        return num1 + "+" + num2 + "=" + operationsService.getPlus(num1, num2);
     }
     @GetMapping("/minus")
     public CharSequence minus(int num1, int num2) {
-        return num1 + "-" + num2 + "=" + operationsInterface.getMinus(num1, num2);
+        return num1 + "-" + num2 + "=" + operationsService.getMinus(num1, num2);
     }
     @GetMapping("/multiply")
     public CharSequence multiply(int num1, int num2) {
-        return num1 + "*" + num2 + "=" + operationsInterface.getMultiply(num1, num2);
+        return num1 + "*" + num2 + "=" + operationsService.getMultiply(num1, num2);
     }
     @GetMapping("/divide")
     public CharSequence divide(int num1, int num2) {
-        return num1 + "/" + num2 + "=" + operationsInterface.getDivide(num1, num2);
+        return num1 + "/" + num2 + "=" + operationsService.getDivide(num1, num2);
     }
 }
