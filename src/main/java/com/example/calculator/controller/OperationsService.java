@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 
-public class OperationsInterfaceImpl implements OperationsInterface {
+public class OperationsService implements OperationsInterface {
     @Override
     public int getPlus(int num1, int num2) {
         return num1 + num2;
